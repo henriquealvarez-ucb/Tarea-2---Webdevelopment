@@ -1,7 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./auth/AuthContext";
+import ProtectedRoute from "./auth/ProtectedRoute";
+import Login from "./pages/Login";
+
 export default function App() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-bg">
-      <h1 className="text-2xl font-semibold text-primary">Club Frontón</h1>
-    </main>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+
+          <Route element={<ProtectedRoute />}>
+            <Route path="/" element={<p>Panel principal (próximamente)</p>} />
+          </Route>
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
