@@ -3,6 +3,8 @@ import { AuthProvider } from "./auth/AuthContext";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import JugadoresList from "./pages/jugadores/JugadoresList";
+import JugadorForm from "./pages/jugadores/JugadorForm";
 
 export default function App() {
   return (
@@ -13,6 +15,9 @@ export default function App() {
 
           <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/jugadores" element={<JugadoresList />} />
+            <Route path="/jugadores/nuevo" element={<JugadorForm />} />
+            <Route path="/jugadores/:id/editar" element={<JugadorForm />} />
           </Route>
         </Routes>
       </AuthProvider>
