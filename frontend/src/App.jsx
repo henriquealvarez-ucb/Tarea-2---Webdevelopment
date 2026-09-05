@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./auth/AuthContext";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
 
           <Route element={<ProtectedRoute />}>
-            <Route path="/" element={<p>Panel principal (próximamente)</p>} />
+            <Route path="/" element={<Dashboard />} />
           </Route>
         </Routes>
       </AuthProvider>
