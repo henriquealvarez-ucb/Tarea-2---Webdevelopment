@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import JugadoresList from "./pages/jugadores/JugadoresList";
 import JugadorForm from "./pages/jugadores/JugadorForm";
+import PartidosList from "./pages/partidos/PartidosList";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <Route path="/jugadores" element={<JugadoresList />} />
             <Route path="/jugadores/nuevo" element={<JugadorForm />} />
             <Route path="/jugadores/:id/editar" element={<JugadorForm />} />
+            <Route path="/partidos" element={<PartidosList />} />
           </Route>
         </Routes>
       </AuthProvider>
